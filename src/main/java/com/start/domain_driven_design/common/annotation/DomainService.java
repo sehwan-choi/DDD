@@ -1,4 +1,4 @@
-package com.start.common.annotation;
+package com.start.domain_driven_design.common.annotation;
 
 import org.springframework.stereotype.Component;
 

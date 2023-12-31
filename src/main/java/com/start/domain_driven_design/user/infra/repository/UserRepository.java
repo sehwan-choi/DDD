@@ -1,6 +1,6 @@
-package com.start.user.infra.repository;
+package com.start.domain_driven_design.user.infra.repository;
 
-import com.start.user.domain.User;
+import com.start.domain_driven_design.user.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.start.user.domain;
+package com.start.domain_driven_design.user.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
+@EqualsAndHashCode(of = "id")
 public class User {
 
     @Id
@@ -48,7 +49,7 @@ public class User {
     }
 
     public void changePhone(UserPhone phone) {
-        this.phone = new UserPhone(phone.getNumber());
+        this.phone = new UserPhone(phone.getPhoneNumber());
     }
 
     public void changeEmail(UserEmail email) {

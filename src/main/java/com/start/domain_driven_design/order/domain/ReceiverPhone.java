@@ -1,19 +1,17 @@
-package com.start.user.domain;
+package com.start.domain_driven_design.order.domain;
 
-import com.start.user.domain.exception.PhoneNumberInvalidException;
+import com.start.domain_driven_design.user.domain.exception.PhoneNumberInvalidException;
 import jakarta.persistence.Embeddable;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Embeddable
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
-public class UserPhone {
+@EqualsAndHashCode
+public class ReceiverPhone {
 
-    private String number;
+    private String phoneNumber;
 
     private String firstNumber;
 
@@ -21,10 +19,10 @@ public class UserPhone {
 
     private String lastNumber;
 
-    public UserPhone(String number) {
+    public ReceiverPhone(String number) {
         assertPhoneNumber(number);
         String[] numbers = splitNumber(number);
-        this.number = number;
+        this.phoneNumber = number;
         this.firstNumber = numbers[0];
         this.middleNumber = numbers[1];
         this.lastNumber = numbers[2];

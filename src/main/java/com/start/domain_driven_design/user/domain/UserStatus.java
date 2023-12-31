@@ -1,4 +1,4 @@
-package com.start.user.domain;
+package com.start.domain_driven_design.user.domain;
 
 public enum UserStatus {
     ACTIVE,
