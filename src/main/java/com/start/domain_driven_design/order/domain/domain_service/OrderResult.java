@@ -7,5 +7,5 @@ public class OrderResult {
 
     Long orderId;
 
-    Long orderNumber;
+    String orderNumber;
 }

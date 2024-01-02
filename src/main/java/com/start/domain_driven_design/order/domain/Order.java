@@ -1,11 +1,14 @@
 package com.start.domain_driven_design.order.domain;
 
+import com.start.domain_driven_design.order.domain.exception.OrderStatusChangeException;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "orders")
@@ -31,9 +34,8 @@ public class Order {
     @Embedded
     private ShippingInfo shippingInfo;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn
-    private OrderLine orderLine;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "order")
+    private List<OrderProduct> orderProducts = new ArrayList<>();
 
     @CreationTimestamp
     private LocalDateTime createdAt;
@@ -41,11 +43,19 @@ public class Order {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    public Order(OrderNumber orderId, Orderer orderUser, ShippingInfo shippingInfo, OrderLine orderLine) {
+    public Order(OrderNumber orderId, Orderer orderUser, ShippingInfo shippingInfo, List<OrderProduct> orderProducts) {
         this.setOrderId(orderId);
         this.setOrderer(orderUser);
         this.setShippingInfo(shippingInfo);
-        this.setOrderLine(orderLine);
+        this.orderProducts = orderProducts;
+        this.status = OrderStatus.BEFORE_PAYMENT;
+    }
+
+    public void statusChange(OrderStatus status) {
+        if (!this.status.isAvailableStatus(status)) {
+            throw new OrderStatusChangeException(this.status.name(), status.name());
+        }
+        this.status = status;
     }
 
     private void setOrderId(OrderNumber orderId) {
@@ -67,12 +77,5 @@ public class Order {
             throw new IllegalArgumentException("shippingInfo is Null");
         }
         this.shippingInfo = shippingInfo;
-    }
-
-    private void setOrderLine(OrderLine orderLine) {
-        if (orderLine == null) {
-            throw new IllegalArgumentException("orderLine is Null");
-        }
-        this.orderLine = orderLine;
     }
 }

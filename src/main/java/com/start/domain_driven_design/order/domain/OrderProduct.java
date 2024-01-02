@@ -1,11 +1,14 @@
 package com.start.domain_driven_design.order.domain;
 
 import com.start.domain_driven_design.common.domain.Money;
+import com.start.domain_driven_design.order.domain.converter.MoneyConverter;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "order_products")
@@ -19,11 +22,12 @@ public class OrderProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private OrderLine orderLine;
+    @ManyToOne
+    private Order order;
 
     private Long productId;
 
+    @Convert(converter = MoneyConverter.class)
     private Money price;
 
     private int quantity;

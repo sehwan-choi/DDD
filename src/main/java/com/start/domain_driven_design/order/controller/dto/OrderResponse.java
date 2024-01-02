@@ -1,4 +1,4 @@
-package com.start.domain_driven_design.order.controller;
+package com.start.domain_driven_design.order.controller.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
