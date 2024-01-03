@@ -1,14 +1,12 @@
 package com.start.domain_driven_design.order.domain;
 
 import com.start.domain_driven_design.common.domain.Money;
-import com.start.domain_driven_design.order.domain.converter.MoneyConverter;
+import com.start.domain_driven_design.order.converter.MoneyConverter;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "order_products")

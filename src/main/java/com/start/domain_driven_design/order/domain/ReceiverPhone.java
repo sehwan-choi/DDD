@@ -1,6 +1,6 @@
 package com.start.domain_driven_design.order.domain;
 
-import com.start.domain_driven_design.user.domain.exception.PhoneNumberInvalidException;
+import com.start.domain_driven_design.user.exception.PhoneNumberInvalidException;
 import jakarta.persistence.Embeddable;
 import lombok.*;
 

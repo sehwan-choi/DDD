@@ -1,4 +1,4 @@
-package com.start.domain_driven_design.order.domain.domain_service;
+package com.start.domain_driven_design.order.service;
 
 import com.start.domain_driven_design.order.controller.dto.OrderRequest;
 

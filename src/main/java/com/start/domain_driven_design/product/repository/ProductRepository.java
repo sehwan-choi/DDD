@@ -1,4 +1,4 @@
-package com.start.domain_driven_design.product.infra.repository;
+package com.start.domain_driven_design.product.repository;
 
 import com.start.domain_driven_design.product.domain.Product;
 import org.springframework.data.jpa.repository.JpaRepository;

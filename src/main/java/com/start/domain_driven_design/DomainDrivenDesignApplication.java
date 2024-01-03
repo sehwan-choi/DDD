@@ -2,7 +2,7 @@ package com.start.domain_driven_design;
 
 import com.start.domain_driven_design.common.domain.Money;
 import com.start.domain_driven_design.product.domain.Product;
-import com.start.domain_driven_design.product.infra.repository.ProductRepository;
+import com.start.domain_driven_design.product.repository.ProductRepository;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;

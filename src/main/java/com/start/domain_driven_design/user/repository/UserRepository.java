@@ -1,4 +1,4 @@
-package com.start.domain_driven_design.user.infra.repository;
+package com.start.domain_driven_design.user.repository;
 
 import com.start.domain_driven_design.user.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;

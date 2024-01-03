@@ -1,4 +1,4 @@
-package com.start.domain_driven_design.order.domain.converter;
+package com.start.domain_driven_design.order.converter;
 
 import com.start.domain_driven_design.common.domain.Money;
 import jakarta.persistence.AttributeConverter;

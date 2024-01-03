@@ -2,11 +2,10 @@ package com.start.domain_driven_design.order.controller;
 
 import com.start.domain_driven_design.common.SimpleResponse;
 import com.start.domain_driven_design.order.controller.dto.OrderRequest;
-import com.start.domain_driven_design.order.controller.dto.OrderStatusChangeRequest;
 import com.start.domain_driven_design.order.domain.OrderStatus;
-import com.start.domain_driven_design.order.domain.domain_service.OrderCreateService;
-import com.start.domain_driven_design.order.domain.domain_service.OrderResult;
-import com.start.domain_driven_design.order.domain.domain_service.OrderStatusChangeService;
+import com.start.domain_driven_design.order.service.OrderCreateService;
+import com.start.domain_driven_design.order.service.OrderResult;
+import com.start.domain_driven_design.order.service.OrderStatusChangeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

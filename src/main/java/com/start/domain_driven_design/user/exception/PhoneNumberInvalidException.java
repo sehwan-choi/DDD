@@ -1,4 +1,4 @@
-package com.start.domain_driven_design.user.domain.exception;
+package com.start.domain_driven_design.user.exception;
 
 public class PhoneNumberInvalidException extends RuntimeException{
 

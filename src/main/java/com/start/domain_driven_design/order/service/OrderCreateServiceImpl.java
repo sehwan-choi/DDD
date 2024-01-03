@@ -1,12 +1,11 @@
-package com.start.domain_driven_design.order.domain.domain_service;
+package com.start.domain_driven_design.order.service;
 
 import com.start.domain_driven_design.common.annotation.DomainService;
-import com.start.domain_driven_design.common.domain.Money;
 import com.start.domain_driven_design.order.controller.dto.*;
 import com.start.domain_driven_design.order.domain.*;
-import com.start.domain_driven_design.order.infra.repository.OrderRepository;
+import com.start.domain_driven_design.order.repository.OrderRepository;
 import com.start.domain_driven_design.product.domain.Product;
-import com.start.domain_driven_design.product.domain_service.ProductFinder;
+import com.start.domain_driven_design.product.service.ProductFinder;
 import com.start.domain_driven_design.product.exception.ProductNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,7 +22,6 @@ public class OrderCreateServiceImpl implements OrderCreateService{
     private final ProductFinder productFinder;
 
 
-    // TODO: 상품 주문 구현 해야함
     @Override
     @Transactional
     public OrderResult createOrder(OrderRequest request) {

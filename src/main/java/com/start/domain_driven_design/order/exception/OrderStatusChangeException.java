@@ -1,4 +1,4 @@
-package com.start.domain_driven_design.order.domain.exception;
+package com.start.domain_driven_design.order.exception;
 
 public class OrderStatusChangeException extends RuntimeException{
 

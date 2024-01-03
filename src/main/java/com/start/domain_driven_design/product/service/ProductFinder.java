@@ -1,8 +1,8 @@
-package com.start.domain_driven_design.product.domain_service;
+package com.start.domain_driven_design.product.service;
 
 import com.start.domain_driven_design.common.annotation.DomainService;
 import com.start.domain_driven_design.product.domain.Product;
-import com.start.domain_driven_design.product.infra.repository.ProductRepository;
+import com.start.domain_driven_design.product.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Collection;

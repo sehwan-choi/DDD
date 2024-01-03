@@ -1,7 +1,7 @@
 package com.start.domain_driven_design.product.domain;
 
 import com.start.domain_driven_design.common.domain.Money;
-import com.start.domain_driven_design.order.domain.converter.MoneyConverter;
+import com.start.domain_driven_design.order.converter.MoneyConverter;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

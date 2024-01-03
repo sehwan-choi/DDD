@@ -1,6 +1,6 @@
 package com.start.domain_driven_design.order.domain;
 
-import com.start.domain_driven_design.order.domain.exception.OrderStatusChangeException;
+import com.start.domain_driven_design.order.exception.OrderStatusChangeException;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
